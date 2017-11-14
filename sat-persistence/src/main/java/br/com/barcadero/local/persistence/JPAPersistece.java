@@ -8,9 +8,11 @@ public class JPAPersistece {
 	public static EntityManager manager;
 	 private static final String PERSISTENCE_UNIT_NAME = "SAT-LOCAL";
      private static EntityManagerFactory factory;
-	static {
+	 public static void initPersistencia() {
 		 factory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
 		 manager = factory.createEntityManager();
-	}
+	 }
+		 
+	
 
 }
