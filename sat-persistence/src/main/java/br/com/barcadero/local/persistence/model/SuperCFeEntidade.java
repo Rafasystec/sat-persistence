@@ -1,19 +1,25 @@
 package br.com.barcadero.local.persistence.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @MappedSuperclass
 public class SuperCFeEntidade {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id",nullable=false)
 	private long id;
 	@Column(length=1409850)
 	private String arquivoBase64;
+	@Column(length=1409850)
 	private String assinaturaQrcode;
 	private String chaveConsulta;
 	private String codCCCC;
@@ -22,6 +28,8 @@ public class SuperCFeEntidade {
 	private String mensagemSAT;
 	private String numeroSessao;
 	private String mensagemSEFAZ;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date dtCadastro = new Date();
 	public long getId() {
 		return id;
 	}
@@ -81,6 +89,32 @@ public class SuperCFeEntidade {
 	}
 	public void setMensagemSEFAZ(String mensagemSEFAZ) {
 		this.mensagemSEFAZ = mensagemSEFAZ;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SuperCFeEntidade other = (SuperCFeEntidade) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	public Date getDtCadastro() {
+		return dtCadastro;
+	}
+	public void setDtCadastro(Date dtCadastro) {
+		this.dtCadastro = dtCadastro;
 	}
 	
 	

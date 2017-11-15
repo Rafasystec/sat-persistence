@@ -1,5 +1,7 @@
 package br.com.barcadero.local.persistence.dao;
 
+import javax.persistence.EntityTransaction;
+
 import br.com.barcadero.local.persistence.JPAPersistece;
 
 
@@ -10,10 +12,11 @@ public abstract class DaoSuperClass<T>{
 	}
 
 	public T insert(T entidade) throws Exception {
-		JPAPersistece.manager.getTransaction().begin();
+		EntityTransaction transaction = JPAPersistece.manager.getTransaction();
+		transaction.begin();
 		if(entidade != null){
 			JPAPersistece.manager.persist(entidade);
-			JPAPersistece.manager.getTransaction().commit();
+			transaction.commit();
 		}
 		return entidade;
 	}

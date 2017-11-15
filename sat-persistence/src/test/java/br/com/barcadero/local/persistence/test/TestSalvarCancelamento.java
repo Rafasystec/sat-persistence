@@ -2,6 +2,8 @@ package br.com.barcadero.local.persistence.test;
 
 import static org.junit.Assert.*;
 
+import java.util.Random;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -26,7 +28,7 @@ public class TestSalvarCancelamento {
 		cFeCancelamento.setCodErroSAT("06000");
 		cFeCancelamento.setCodSEFAZ("");
 		cFeCancelamento.setMensagemSAT("EMITIDO COM SUCESSO MAIS CONTEUDO DAS NOTAS");
-		cFeCancelamento.setNumeroSessao("123456789");
+		cFeCancelamento.setNumeroSessao(""+new Random().nextInt(9999999));
 		cFeCancelamento.setTimeStamp("21522156654654121");
 		cFeCancelamento.setValorTotalCFe("10.00");
 		DaoCFeCancelamento daoCFeCancelamento = new DaoCFeCancelamento();

@@ -6,6 +6,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name="CFE_CANCELAMENTO")
 public class CFeCancelamento extends SuperCFeEntidade{
+	public CFeCancelamento() {
+		// TODO Auto-generated constructor stub
+	}
 	private String CpfCnpjValue;
 	private String TimeStamp;
 	private String ValorTotalCFe;
