@@ -7,11 +7,12 @@ import javax.persistence.Table;
 @Table(name="CFE_CANCELAMENTO")
 public class CFeCancelamento extends SuperCFeEntidade{
 	public CFeCancelamento() {
-		// TODO Auto-generated constructor stub
 	}
 	private String CpfCnpjValue;
 	private String TimeStamp;
 	private String ValorTotalCFe;
+	private String chaveASerCancelada;
+	
 	public String getCpfCnpjValue() {
 		return CpfCnpjValue;
 	}
@@ -29,6 +30,12 @@ public class CFeCancelamento extends SuperCFeEntidade{
 	}
 	public void setValorTotalCFe(String valorTotalCFe) {
 		ValorTotalCFe = valorTotalCFe;
+	}
+	public String getChaveASerCancelada() {
+		return chaveASerCancelada;
+	}
+	public void setChaveASerCancelada(String chaveASerCancelada) {
+		this.chaveASerCancelada = chaveASerCancelada;
 	}
 	
 	

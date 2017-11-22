@@ -30,6 +30,10 @@ public class SuperCFeEntidade {
 	private String mensagemSEFAZ;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtCadastro = new Date();
+	@Column(length=14098500)
+	private String resposta;
+	@Column(length=1409850)
+	private String xml;
 	public long getId() {
 		return id;
 	}
@@ -115,6 +119,18 @@ public class SuperCFeEntidade {
 	}
 	public void setDtCadastro(Date dtCadastro) {
 		this.dtCadastro = dtCadastro;
+	}
+	public String getResposta() {
+		return resposta;
+	}
+	public void setResposta(String resposta) {
+		this.resposta = resposta;
+	}
+	public String getXml() {
+		return xml;
+	}
+	public void setXml(String xml) {
+		this.xml = xml;
 	}
 	
 	

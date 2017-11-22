@@ -10,6 +10,7 @@ public class CFeVenda extends SuperCFeEntidade{
 	private String cpfCnpjValue;
 	private String timeStamp;
 	private String valorTotalCFe;
+		
 	public String getCpfCnpjValue() {
 		return cpfCnpjValue;
 	}
